@@ -1,5 +1,13 @@
 // Encoding API types
 
+type BufferSource = ArrayBuffer | ArrayBufferView;
+
+interface ArrayBufferView {
+  buffer: ArrayBuffer;
+  byteLength: number;
+  byteOffset: number;
+}
+
 declare class TextEncoder {
   readonly encoding: string;
   encode(input?: string): Uint8Array;
