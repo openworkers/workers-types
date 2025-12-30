@@ -1,0 +1,13 @@
+{
+  "name": "@openworkers/workers-types",
+  "version": "0.1.0",
+  "description": "TypeScript types for the OpenWorkers runtime",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "types/*.d.ts"
+  ],
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
