@@ -10,6 +10,8 @@ bun add -d @openworkers/workers-types
 
 ## Usage
 
+### Exclusive mode (recommended)
+
 Add to your `tsconfig.json`:
 
 ```json
@@ -20,7 +22,23 @@ Add to your `tsconfig.json`:
 }
 ```
 
-Or use a triple-slash directive:
+This includes only OpenWorkers types and excludes conflicting types (like `@types/node` or `@types/bun`). Best for pure worker projects.
+
+### Compatible mode
+
+If you need to mix with Node.js or Bun types, just install the package without configuring `types`. The types will merge with existing globals:
+
+```json
+{
+  "compilerOptions": {
+    // no "types" array - all @types/* are included
+  }
+}
+```
+
+### Triple-slash directive
+
+For per-file control:
 
 ```typescript
 /// <reference no-default-lib="true" />
@@ -30,6 +48,7 @@ Or use a triple-slash directive:
 
 ## Structure
 
+- `types/globals.d.ts` - globalThis, self
 - `types/fetch.d.ts` - Request, Response, Headers, fetch
 - `types/url.d.ts` - URL, URLSearchParams
 - `types/streams.d.ts` - ReadableStream, WritableStream

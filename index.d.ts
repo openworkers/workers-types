@@ -1,5 +1,6 @@
 // OpenWorkers Runtime Types
 
+/// <reference path="./types/globals.d.ts" />
 /// <reference path="./types/events.d.ts" />
 /// <reference path="./types/abort.d.ts" />
 /// <reference path="./types/streams.d.ts" />
