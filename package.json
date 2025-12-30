@@ -2,12 +2,28 @@
   "name": "@openworkers/workers-types",
   "version": "0.1.0",
   "description": "TypeScript types for the OpenWorkers runtime",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openworkers/workers-types"
+  },
+  "keywords": [
+    "openworkers",
+    "workers",
+    "typescript",
+    "types"
+  ],
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
     "types/*.d.ts"
   ],
   "peerDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "^5"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
   }
 }

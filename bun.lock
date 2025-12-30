@@ -5,7 +5,7 @@
     "": {
       "name": "@openworkers/workers-types",
       "peerDependencies": {
-        "typescript": "^5.9.3",
+        "typescript": "^5",
       },
     },
   },
