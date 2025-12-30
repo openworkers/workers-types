@@ -23,6 +23,8 @@ Add to your `tsconfig.json`:
 Or use a triple-slash directive:
 
 ```typescript
+/// <reference no-default-lib="true" />
+/// <reference lib="esnext" />
 /// <reference types="@openworkers/workers-types" />
 ```
 
