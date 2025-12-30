@@ -3,28 +3,28 @@
 interface SubtleCrypto {
   digest(
     algorithm: string | { name: string },
-    data: ArrayBuffer | Uint8Array
+    data: BufferSource
   ): Promise<ArrayBuffer>;
   encrypt(
     algorithm: unknown,
     key: CryptoKey,
-    data: ArrayBuffer | Uint8Array
+    data: BufferSource
   ): Promise<ArrayBuffer>;
   decrypt(
     algorithm: unknown,
     key: CryptoKey,
-    data: ArrayBuffer | Uint8Array
+    data: BufferSource
   ): Promise<ArrayBuffer>;
   sign(
     algorithm: unknown,
     key: CryptoKey,
-    data: ArrayBuffer | Uint8Array
+    data: BufferSource
   ): Promise<ArrayBuffer>;
   verify(
     algorithm: unknown,
     key: CryptoKey,
-    signature: ArrayBuffer | Uint8Array,
-    data: ArrayBuffer | Uint8Array
+    signature: BufferSource,
+    data: BufferSource
   ): Promise<boolean>;
   generateKey(
     algorithm: unknown,

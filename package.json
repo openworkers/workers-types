@@ -1,6 +1,6 @@
 {
   "name": "@openworkers/workers-types",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "TypeScript types for the OpenWorkers runtime",
   "license": "MIT",
   "repository": {
