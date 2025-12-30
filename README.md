@@ -39,3 +39,4 @@ Or use a triple-slash directive:
 - `types/abort.d.ts` - AbortController, AbortSignal
 - `types/blob.d.ts` - Blob, File, FormData
 - `types/workers.d.ts` - ExecutionContext, ScheduledEvent, ExportedHandler
+- `types/bindings.d.ts` - BindingAssets, BindingStorage, BindingKV, BindingDatabase, BindingWorker

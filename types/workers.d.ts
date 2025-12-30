@@ -3,6 +3,7 @@
 interface ScheduledEvent {
   scheduledTime: number;
   cron?: string;
+  waitUntil(promise: Promise<unknown>): void;
 }
 
 interface ExecutionContext {

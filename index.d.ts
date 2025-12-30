@@ -11,3 +11,4 @@
 /// <reference path="./types/console.d.ts" />
 /// <reference path="./types/timers.d.ts" />
 /// <reference path="./types/workers.d.ts" />
+/// <reference path="./types/bindings.d.ts" />
