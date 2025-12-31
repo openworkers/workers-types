@@ -120,32 +120,54 @@ declare global {
   }
 
   /**
+   * JSON-serializable value type.
+   * Supports strings, numbers, booleans, null, arrays, and objects.
+   * Note: Binary data (Uint8Array, ArrayBuffer) is not supported.
+   */
+  type JsonValue =
+    | string
+    | number
+    | boolean
+    | null
+    | JsonValue[]
+    | { [key: string]: JsonValue };
+
+  /**
    * Key-Value storage binding for fast, low-latency data access.
-   * Ideal for configuration, sessions, and small data.
+   * Stores values as JSON, supporting strings, numbers, booleans, objects, and arrays.
+   * Ideal for configuration, sessions, and structured data.
    *
    * @example
    * ```ts
-   * // Store with expiration
-   * await env.KV.put('session:abc', userData, { expiresIn: 3600 });
+   * // Store a string
+   * await env.KV.put('greeting', 'Hello, World!');
    *
-   * // Retrieve
-   * const session = await env.KV.get('session:abc');
+   * // Store a number
+   * await env.KV.put('count', 42);
+   *
+   * // Store an object with expiration
+   * await env.KV.put('session:abc', { userId: 123, role: 'admin' }, { expiresIn: 3600 });
+   *
+   * // Retrieve with type inference
+   * const session = await env.KV.get<{ userId: number; role: string }>('session:abc');
    * ```
    */
   interface BindingKV {
     /**
      * Retrieves a value by key.
-     * @returns The value as a string, or null if not found.
+     * @typeParam T The expected value type (defaults to unknown).
+     * @returns The value, or null if not found or expired.
      */
-    get(key: string): Promise<string | null>;
+    get<T = unknown>(key: string): Promise<T | null>;
 
     /**
-     * Stores a value with optional expiration.
+     * Stores a JSON-serializable value with optional expiration.
+     * Maximum value size: 100KB.
      * @param key The storage key.
-     * @param value The value to store.
+     * @param value The value to store (must be JSON-serializable).
      * @param options Optional settings like TTL.
      */
-    put(key: string, value: string, options?: KVPutOptions): Promise<void>;
+    put(key: string, value: JsonValue, options?: KVPutOptions): Promise<void>;
 
     /**
      * Deletes a key.
