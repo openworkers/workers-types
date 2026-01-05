@@ -73,6 +73,12 @@ declare global {
     /** The amount of data the consumer wants, or null if the stream is closed. */
     readonly desiredSize: number | null;
 
+    /**
+     * An AbortSignal that is aborted when the stream consumer cancels/disconnects.
+     * Use this to detect client disconnection and stop producing data.
+     */
+    readonly signal?: AbortSignal;
+
     /** Closes the stream. No more chunks can be enqueued after this. */
     close(): void;
 
