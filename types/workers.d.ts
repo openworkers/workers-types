@@ -42,6 +42,13 @@ declare global {
      * Must be called before any response is sent.
      */
     passThroughOnException(): void;
+
+    /**
+     * Properties passed to the worker.
+     * For Hono/Cloudflare Workers compatibility.
+     * @deprecated Not implemented in OpenWorkers
+     */
+    props: never;
   }
 
   /**
