@@ -136,7 +136,7 @@ declare global {
     formData(): Promise<FormData>;
 
     /** Reads the body as JSON. */
-    json(): Promise<unknown>;
+    json<T = unknown>(): Promise<T>;
 
     /** Reads the body as text. */
     text(): Promise<string>;
@@ -227,7 +227,7 @@ declare global {
     formData(): Promise<FormData>;
 
     /** Reads the body as JSON. */
-    json(): Promise<unknown>;
+    json<T = unknown>(): Promise<T>;
 
     /** Reads the body as text. */
     text(): Promise<string>;
