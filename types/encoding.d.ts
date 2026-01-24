@@ -36,10 +36,7 @@ declare global {
      * @param destination The buffer to write into.
      * @returns An object with `read` (chars read) and `written` (bytes written).
      */
-    encodeInto(
-      source: string,
-      destination: Uint8Array
-    ): { read: number; written: number };
+    encodeInto(source: string, destination: Uint8Array): { read: number; written: number };
   }
 
   /**

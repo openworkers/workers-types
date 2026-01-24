@@ -85,9 +85,7 @@ declare global {
      * Creates a new URLSearchParams.
      * @param init Initial parameters as string, object, or array of pairs.
      */
-    constructor(
-      init?: string | URLSearchParams | Record<string, string> | [string, string][]
-    );
+    constructor(init?: string | URLSearchParams | Record<string, string> | [string, string][]);
 
     /** Appends a new key/value pair. */
     append(name: string, value: string): void;
@@ -114,9 +112,7 @@ declare global {
     toString(): string;
 
     /** Executes a callback for each key/value pair. */
-    forEach(
-      callback: (value: string, key: string, parent: URLSearchParams) => void
-    ): void;
+    forEach(callback: (value: string, key: string, parent: URLSearchParams) => void): void;
 
     /** Returns an iterator of all key/value pairs. */
     entries(): IterableIterator<[string, string]>;

@@ -5,14 +5,7 @@ export {};
 /**
  * Valid types for a request or response body.
  */
-type BodyInit =
-  | ReadableStream
-  | Blob
-  | ArrayBuffer
-  | Uint8Array
-  | FormData
-  | URLSearchParams
-  | string;
+type BodyInit = ReadableStream | Blob | ArrayBuffer | Uint8Array | FormData | URLSearchParams | string;
 
 /**
  * Valid types for initializing Headers.
@@ -82,7 +75,7 @@ declare global {
     body?: BodyInit | null;
 
     /** How to handle redirects: "follow", "error", or "manual". */
-    redirect?: "follow" | "error" | "manual";
+    redirect?: 'follow' | 'error' | 'manual';
 
     /** An AbortSignal to cancel the request. */
     signal?: AbortSignal;
@@ -246,8 +239,5 @@ declare global {
    * const data = await response.json();
    * ```
    */
-  function fetch(
-    input: Request | string | URL,
-    init?: RequestInit
-  ): Promise<Response>;
+  function fetch(input: Request | string | URL, init?: RequestInit): Promise<Response>;
 }

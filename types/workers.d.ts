@@ -71,11 +71,7 @@ declare global {
      * @param env Environment bindings.
      * @param ctx Execution context.
      */
-    fetch?(
-      request: Request,
-      env: Env,
-      ctx: ExecutionContext
-    ): Response | Promise<Response>;
+    fetch?(request: Request, env: Env, ctx: ExecutionContext): Response | Promise<Response>;
 
     /**
      * Handles scheduled (cron) invocations.
@@ -83,11 +79,7 @@ declare global {
      * @param env Environment bindings.
      * @param ctx Execution context.
      */
-    scheduled?(
-      event: ScheduledEvent,
-      env: Env,
-      ctx: ExecutionContext
-    ): void | Promise<void>;
+    scheduled?(event: ScheduledEvent, env: Env, ctx: ExecutionContext): void | Promise<void>;
   }
 
   // addEventListener pattern
@@ -133,16 +125,10 @@ declare global {
   /**
    * Registers a fetch event listener (Service Worker pattern).
    */
-  function addEventListener(
-    type: "fetch",
-    listener: (event: FetchEvent) => void
-  ): void;
+  function addEventListener(type: 'fetch', listener: (event: FetchEvent) => void): void;
 
   /**
    * Registers a scheduled event listener (Service Worker pattern).
    */
-  function addEventListener(
-    type: "scheduled",
-    listener: ScheduledEventListener
-  ): void;
+  function addEventListener(type: 'scheduled', listener: ScheduledEventListener): void;
 }

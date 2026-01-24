@@ -17,11 +17,7 @@ declare global {
    * clearTimeout(id); // Cancel before it runs
    * ```
    */
-  function setTimeout(
-    callback: (...args: unknown[]) => void,
-    ms?: number,
-    ...args: unknown[]
-  ): number;
+  function setTimeout(callback: (...args: unknown[]) => void, ms?: number, ...args: unknown[]): number;
 
   /**
    * Cancels a timeout previously scheduled with setTimeout().
@@ -46,11 +42,7 @@ declare global {
    * }, 1000);
    * ```
    */
-  function setInterval(
-    callback: (...args: unknown[]) => void,
-    ms?: number,
-    ...args: unknown[]
-  ): number;
+  function setInterval(callback: (...args: unknown[]) => void, ms?: number, ...args: unknown[]): number;
 
   /**
    * Cancels an interval previously scheduled with setInterval().

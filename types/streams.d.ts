@@ -53,10 +53,7 @@ declare global {
      * Pipes this stream through a transform stream, returning the readable side.
      * @param transform An object with `writable` and `readable` properties.
      */
-    pipeThrough<T>(transform: {
-      writable: WritableStream<R>;
-      readable: ReadableStream<T>;
-    }): ReadableStream<T>;
+    pipeThrough<T>(transform: { writable: WritableStream<R>; readable: ReadableStream<T> }): ReadableStream<T>;
 
     /** Pipes this stream to a writable stream. */
     pipeTo(dest: WritableStream<R>): Promise<void>;

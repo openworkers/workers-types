@@ -19,10 +19,7 @@ declare global {
      * @param blobParts Array of data to include in the blob.
      * @param options Optional settings like MIME type.
      */
-    constructor(
-      blobParts?: (ArrayBuffer | Uint8Array | Blob | string)[],
-      options?: { type?: string }
-    );
+    constructor(blobParts?: (ArrayBuffer | Uint8Array | Blob | string)[], options?: { type?: string });
 
     /** The size of the blob in bytes. */
     readonly size: number;
@@ -104,9 +101,7 @@ declare global {
     set(name: string, value: string | Blob, filename?: string): void;
 
     /** Executes a callback for each key/value pair. */
-    forEach(
-      callback: (value: string | File, key: string, parent: FormData) => void
-    ): void;
+    forEach(callback: (value: string | File, key: string, parent: FormData) => void): void;
 
     /** Returns an iterator of all key/value pairs. */
     entries(): IterableIterator<[string, string | File]>;

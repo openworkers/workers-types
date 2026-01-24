@@ -1,6 +1,6 @@
 {
   "name": "@openworkers/workers-types",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "TypeScript types for the OpenWorkers runtime",
   "license": "MIT",
   "repository": {
@@ -18,6 +18,9 @@
     "index.d.ts",
     "types/*.d.ts"
   ],
+  "scripts": {
+    "format": "prettier --write ."
+  },
   "peerDependencies": {
     "typescript": "^5"
   },
@@ -25,5 +28,8 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "provenance": true
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
   }
 }

@@ -18,10 +18,7 @@ declare global {
      * const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('hello'));
      * ```
      */
-    digest(
-      algorithm: string | { name: string },
-      data: BufferSource
-    ): Promise<ArrayBuffer>;
+    digest(algorithm: string | { name: string }, data: BufferSource): Promise<ArrayBuffer>;
 
     /**
      * Encrypts data using a key.
@@ -29,11 +26,7 @@ declare global {
      * @param key The encryption key.
      * @param data The data to encrypt.
      */
-    encrypt(
-      algorithm: unknown,
-      key: CryptoKey,
-      data: BufferSource
-    ): Promise<ArrayBuffer>;
+    encrypt(algorithm: unknown, key: CryptoKey, data: BufferSource): Promise<ArrayBuffer>;
 
     /**
      * Decrypts data using a key.
@@ -41,11 +34,7 @@ declare global {
      * @param key The decryption key.
      * @param data The data to decrypt.
      */
-    decrypt(
-      algorithm: unknown,
-      key: CryptoKey,
-      data: BufferSource
-    ): Promise<ArrayBuffer>;
+    decrypt(algorithm: unknown, key: CryptoKey, data: BufferSource): Promise<ArrayBuffer>;
 
     /**
      * Signs data using a private key.
@@ -53,11 +42,7 @@ declare global {
      * @param key The private key.
      * @param data The data to sign.
      */
-    sign(
-      algorithm: unknown,
-      key: CryptoKey,
-      data: BufferSource
-    ): Promise<ArrayBuffer>;
+    sign(algorithm: unknown, key: CryptoKey, data: BufferSource): Promise<ArrayBuffer>;
 
     /**
      * Verifies a signature using a public key.
@@ -67,12 +52,7 @@ declare global {
      * @param data The original data.
      * @returns True if the signature is valid.
      */
-    verify(
-      algorithm: unknown,
-      key: CryptoKey,
-      signature: BufferSource,
-      data: BufferSource
-    ): Promise<boolean>;
+    verify(algorithm: unknown, key: CryptoKey, signature: BufferSource, data: BufferSource): Promise<boolean>;
 
     /**
      * Generates a new cryptographic key or key pair.
@@ -80,11 +60,7 @@ declare global {
      * @param extractable Whether the key can be exported.
      * @param keyUsages The allowed operations for this key.
      */
-    generateKey(
-      algorithm: unknown,
-      extractable: boolean,
-      keyUsages: string[]
-    ): Promise<CryptoKey | CryptoKeyPair>;
+    generateKey(algorithm: unknown, extractable: boolean, keyUsages: string[]): Promise<CryptoKey | CryptoKeyPair>;
 
     /**
      * Imports a key from external format.
@@ -107,10 +83,7 @@ declare global {
      * @param format The key format ("raw", "pkcs8", "spki", "jwk").
      * @param key The key to export.
      */
-    exportKey(
-      format: string,
-      key: CryptoKey
-    ): Promise<ArrayBuffer | JsonWebKey>;
+    exportKey(format: string, key: CryptoKey): Promise<ArrayBuffer | JsonWebKey>;
 
     /**
      * Derives bits from a base key.
@@ -118,11 +91,7 @@ declare global {
      * @param baseKey The base key.
      * @param length The number of bits to derive.
      */
-    deriveBits(
-      algorithm: unknown,
-      baseKey: CryptoKey,
-      length: number
-    ): Promise<ArrayBuffer>;
+    deriveBits(algorithm: unknown, baseKey: CryptoKey, length: number): Promise<ArrayBuffer>;
 
     /**
      * Derives a new key from a base key.

@@ -18,10 +18,10 @@ declare global {
   interface BindingAssets {
     /**
      * Fetches a static asset from the bundle.
-     * @param path The asset path (e.g., "/index.html").
-     * @param options Optional request options.
+     * @param input The asset path, URL, or request.
+     * @param init Optional request options.
      */
-    fetch(path: string, options?: RequestInit): Promise<Response>;
+    fetch(input: Request | string | URL, init?: RequestInit): Promise<Response>;
   }
 
   /**
@@ -124,13 +124,7 @@ declare global {
    * Supports strings, numbers, booleans, null, arrays, and objects.
    * Note: Binary data (Uint8Array, ArrayBuffer) is not supported.
    */
-  type JsonValue =
-    | string
-    | number
-    | boolean
-    | null
-    | JsonValue[]
-    | { [key: string]: JsonValue };
+  type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue };
 
   /**
    * Key-Value storage binding for fast, low-latency data access.
@@ -217,9 +211,9 @@ declare global {
   interface BindingWorker {
     /**
      * Calls another worker with a request.
-     * @param request The request to send.
-     * @param init Optional request options (when using string URL).
+     * @param input The request, URL, or string URL to send.
+     * @param init Optional request options.
      */
-    fetch(request: Request | string, init?: RequestInit): Promise<Response>;
+    fetch(input: Request | string | URL, init?: RequestInit): Promise<Response>;
   }
 }
