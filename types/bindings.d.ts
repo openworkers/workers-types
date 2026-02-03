@@ -98,6 +98,13 @@ declare global {
      * Deletes a key.
      */
     delete(key: string): Promise<void>;
+
+    /**
+     * Fetches a static asset from the bundle (same as BindingAssets).
+     * @param input The asset path, URL, or request.
+     * @param init Optional request options.
+     */
+    fetch(input: Request | string | URL, init?: RequestInit): Promise<Response>;
   }
 
   /**
