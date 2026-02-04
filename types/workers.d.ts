@@ -48,7 +48,7 @@ declare global {
      * For Hono/Cloudflare Workers compatibility.
      * @deprecated Not implemented in OpenWorkers
      */
-    props: never;
+    props?: never;
   }
 
   /**
