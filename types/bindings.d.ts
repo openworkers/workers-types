@@ -182,12 +182,12 @@ declare global {
   }
 
   /**
-   * SQL database binding for relational data.
+   * SQL database binding for relational data. The database is PostgreSQL.
    *
    * @example
    * ```ts
    * const users = await env.DB.query<User>(
-   *   'SELECT * FROM users WHERE active = ?',
+   *   'SELECT * FROM users WHERE active = $1',
    *   [true]
    * );
    * ```
@@ -195,8 +195,8 @@ declare global {
   interface BindingDatabase {
     /**
      * Executes a SQL query.
-     * @param sql The SQL query with ? placeholders.
-     * @param params Parameter values to bind.
+     * @param sql The SQL query, with PostgreSQL placeholders: $1, $2 and on.
+     * @param params Parameter values to bind, in placeholder order.
      * @returns An array of result rows.
      */
     query<T = Record<string, unknown>>(sql: string, params?: unknown[]): Promise<T[]>;
